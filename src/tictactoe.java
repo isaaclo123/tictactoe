@@ -32,6 +32,21 @@ public class tictactoe {
 				
 				array[line] = character;
 				stalemate = stalemate + 1;
+				checkwin();
+				
+				if (game == false){
+					
+					if (character.equals("O")) {
+						
+						character = "X";
+						
+				}
+				
+				else if (character.equals("X")) {
+						
+						character = "O";
+						
+				}
 				
 			}
 			else {
@@ -41,21 +56,7 @@ public class tictactoe {
 				
 			}
 			
-			checkwin();
 			
-			if (game == false){
-				
-				if (character.equals("O")) {
-					
-					character = "X";
-					
-			}
-			
-			else if (character.equals("X")) {
-					
-					character = "O";
-					
-			}
 		}
 			
 		}
