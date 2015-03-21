@@ -62,7 +62,7 @@ public class tictactoe {
 		
 		print();
 		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-		System.out.print(character + " has won");
+		System.out.print(character + " has won" + "\n\n");
 		System.exit(1);
 		
 	}
@@ -103,7 +103,7 @@ public class tictactoe {
 		if (stalemate == 9 && game == false) {
 				
 			System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-			System.out.print("stalemate");
+			System.out.print("stalemate" + "\n\n");
 			System.exit(1);
 			
 		}
