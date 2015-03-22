@@ -2,12 +2,12 @@
 
 This is a simple game of tic tac toe run in the terminal. It is currently designed for 2 players.
 
-#Game Controls
+##Game Controls
 
 The tic tac toe board is split into 9 quadrants with numbers in each. To select a quadrant, type 
 in the corresponding number on the screen and press the return key.
 
-#How to Run
+##How to Run
 
 1. Download the files from Github.
 2. Unzip or unarchive to the desired folder
@@ -15,7 +15,7 @@ in the corresponding number on the screen and press the return key.
 4. cd to the "bin" directory of the folder
 5. Execute the game by running "java tictactoe" without quotation marks
 
-#Screenshots
+##Screenshots
 
 "clean" game
 
