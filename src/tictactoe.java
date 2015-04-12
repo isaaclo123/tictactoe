@@ -17,10 +17,11 @@ public class tictactoe {
 	
 	public static String input;
 	
-	public static int counter;
+	public static int counter = 0;
 	
 	public static Scanner in = new Scanner(System.in);
 	
+	@SuppressWarnings("resource")
 	public static void main(String[] args) throws InterruptedException {
 		
 		//initializes keyboard input
@@ -40,7 +41,7 @@ public class tictactoe {
 		
 		//prompts for number of players
 		
-		System.out.println("Input the number of players:");
+		System.out.println("Input the number of players (1/2)");
 		input = keyboard.nextLine();
 		String playernumber = input;
 		
@@ -78,18 +79,46 @@ public class tictactoe {
 					input = keyboard.nextLine();
 					
 				}
-			
+	
 		}
+		
+		//if it's a two player game, the character "O" goes first
+		
+				if (playernumber.equals("2")){
+					
+					character = "O";
+					
+				}
 		
 		//while the game is still going (false) (uses a while loop)
 		
 		while (game == false) {
+	
+		//
 			
 		if (playernumber.equals("1")) {
 			
-		//if the character variable is the player, then it prompts for input
+		//if the character variable is the player, then it prompts for input, otherwise the bot code inputs
+						
+		if (player.equals(character)) {
 			
-		if (character.equals(player)) {
+			print();
+			System.out.println("It is " + player + "'s turn:");
+			line = in.nextInt();
+			
+		}
+		
+		//bot
+		
+		else if (bot.equals(character)) {
+			
+			bot();
+			
+		}
+		
+		}
+		
+		else if (playernumber.equals("2")) {
 			
 			print();
 			System.out.println("It is " + character + "'s turn:");
@@ -97,25 +126,7 @@ public class tictactoe {
 			
 		}
 		
-		//otherwise, the character variable runs the bot function
-		
-		else if (character.equals(bot)) {
-		
-			bot();
-			
-		}
-		
-		}
-		
-		//otherwise, if it's a two player game
-		
-		else if (playernumber.equals("2")){
-			
-			//sets the character to "O"
-			
-			character = "O";
-			
-		}
+		//
 		
 			//if the tic-tac-toe grid is not marked
 			
@@ -207,7 +218,7 @@ public class tictactoe {
 			
 		}
 		
-		//if the game counter reaches 9, then in means a stalemate has occoured, and noone wins. the game displays "stalemate"
+		//if the game counter reaches 9, then in means a stalemate has occoured, and noone wins. the game displays "stalemate" and exits the program
 			
 		if (counter == 9 && game == false) {
 				
@@ -238,33 +249,30 @@ public class tictactoe {
 	//bot code
 	
 	public static void bot() {
-		
-			//initializes randome number generator
+
+			//initializes random number generator
 			
 			Random randomGenerator = new Random();
+		
+			//if the bot goes first, it will always choose the center grid, the 5th grid
 			
-			//it the bot goes first, it will always choose the center grid, the 5th grid
-			
-			if (bot.equals("0") && counter == 0) {
+			if (counter == 0 && bot.equals("O")) {
 				
-				line = 5;
+				line = 4;
 				
 			}
 			
 			//otherwise, the bot will generate random numbers until it fins a non-taken space
 			
 			else {
-				
-				while (character.equals(bot)) {
-					
+									
 					line = randomGenerator.nextInt(8);
 					
-				}				
-				
 			}
 			
-
-		}
+	//	}
+		
+	}
 	
 	//initializes the array from 0 to 8
 	
