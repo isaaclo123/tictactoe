@@ -221,7 +221,8 @@ public class tictactoe {
 		//if the game counter reaches 9, then in means a stalemate has occoured, and noone wins. the game displays "stalemate" and exits the program
 			
 		if (counter == 9 && game == false) {
-				
+			
+			print();
 			System.out.print("\n\n" + "stalemate" + "\n\n");
 			System.exit(1);
 			
